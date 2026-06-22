@@ -1,0 +1,47 @@
+[
+  {
+    "id": "private-ips",
+    "type": "field",
+    "outboundTag": "direct",
+    "ip": ["geoip:private"],
+    "enabled": true
+  },
+  {
+    "id": "iran-ip",
+    "type": "field",
+    "outboundTag": "direct",
+    "ip": ["geoip:ir"],
+    "enabled": true
+  },
+  {
+    "id": "iran-domains-geosite",
+    "type": "field",
+    "outboundTag": "direct",
+    "domain": ["geosite:category-ir"],
+    "enabled": true
+  },
+  {
+    "id": "iran-domains-tld",
+    "type": "field",
+    "outboundTag": "direct",
+    "domain": ["regexp:.+\\.ir$"],
+    "enabled": true
+  },
+  {
+    "id": "ads-block",
+    "type": "field",
+    "outboundTag": "block",
+    "domain": [
+      "geosite:category-ads-all",
+      "geosite:category-ads-ir"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "default-proxy",
+    "type": "field",
+    "port": "0-65535",
+    "outboundTag": "proxy",
+    "enabled": true
+  }
+]
